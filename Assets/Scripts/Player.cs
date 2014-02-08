@@ -79,4 +79,16 @@ public class Player : MonoBehaviour {
 		
 		return ret;
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "End")
+		{
+			//if(hanteiCheckEnable)
+			{
+				Debug.Log("Hit End");
+				Application.LoadLevel("Result");
+			}
+		}
+	}
 }
