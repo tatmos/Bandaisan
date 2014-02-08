@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
+
+	public List<AudioClip> seList = new List<AudioClip>();
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +44,8 @@ public class Player : MonoBehaviour {
 					attack = true;					
 					hantei.hanteiCheckEnable = true;
 					attackLastTime = (int)gameTime;
-					
+
+					audio.clip = seList[Random.Range(0,seList.Count)];
 					audio.Play();
 				}
 			}

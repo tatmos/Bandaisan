@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Hantei.cs" />
      <Compile Include="Assets\Scripts\MasterBPM.cs" />
      <Compile Include="Assets\Scripts\Onpu.cs" />
+     <Compile Include="Assets\Scripts\PictureController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Result.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
