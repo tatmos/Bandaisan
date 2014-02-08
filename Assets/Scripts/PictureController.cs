@@ -40,9 +40,12 @@ public class PictureController : MonoBehaviour
 	{
 		int id = Mathf.CeilToInt (Random.Range (0f,textures.Length)) - 1;
 
-		while(id == previousID)
+		if(id == previousID)
 		{
-			id = Mathf.CeilToInt (Random.Range (0f,textures.Length)) - 1;
+			while(id == previousID)
+			{
+				id = Mathf.CeilToInt (Random.Range (0f,textures.Length)) - 1;
+			}
 		}
 
 		previousID = id;
@@ -57,9 +60,9 @@ public class PictureController : MonoBehaviour
 		{
 			Init ();
 			yield return new WaitForSeconds(waitTime);
-			Fade (); print ("fadeStart!");
+			Fade ();
 			yield return new WaitForSeconds(2f);
-			Replace (); print ("Replace!");
+			Replace ();
 		}
 	}
 
