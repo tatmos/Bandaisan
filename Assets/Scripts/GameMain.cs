@@ -4,36 +4,39 @@ using System.Collections;
 public class GameMain : MonoBehaviour {
 
 	public GameObject player;
+	public GUIText gt;
 
 	public int score = 0;
+	int lastScore = 0;
+
+	static public GameMain master;
+
+	void Awake()
+	{
+		if(master == null){
+			DontDestroyOnLoad(this);
+			score = PlayerPrefs.GetInt("Score");
+		} else {
+			GameObject.Destroy(this.gameObject);
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
-	
+		if(master == null){
+			master = this;
+		}
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 	
-		if(Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			player.transform.Translate(new Vector3(-10,0,0));
+		gt.text = string.Format("Score : {0:D4}", score);
+		if(lastScore != score){
+			PlayerPrefs.SetInt("Score", score);
+			lastScore = score;
 		}
-		
-		if(Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			player.transform.Translate(new Vector3(10,0,0));
-		}
-
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			player.transform.localScale = new Vector3(20,20,20);
-		}
-		if(Input.GetKeyUp(KeyCode.Space))
-		{
-			player.transform.localScale = new Vector3(10,10,10);
-		}
-
 	}
 
 

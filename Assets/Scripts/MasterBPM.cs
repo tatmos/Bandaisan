@@ -140,9 +140,9 @@ public class MasterBPM : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Label("BPM " + (int)bpm + " " + bgmTitle + " Speed " + speed);
-		GUILayout.EndHorizontal();
+		//GUILayout.BeginHorizontal();
+		//GUILayout.Label("BPM " + (int)bpm + " " + bgmTitle + " Speed " + speed);
+		//GUILayout.EndHorizontal();
 	}
 
 	void OnBPMUp()

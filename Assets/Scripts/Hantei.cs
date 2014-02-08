@@ -30,6 +30,8 @@ public class Hantei : MonoBehaviour {
 			{
 				Debug.Log("Hit Onpu");
 				GameObject.Destroy(other.gameObject);
+
+				GameMain.master.score ++;
 			}
 		}
 	}
